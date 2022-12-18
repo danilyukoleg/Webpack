@@ -1,3 +1,39 @@
 @import "vars.scss";
 @import "global.scss";
 @import "mixins.scss";
+
+// Нужно Удалить
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  &__title {
+    margin-top: 25px;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 700;
+  }
+  &__nav {
+    margin-top: 30px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      color: #fff;
+      font-weight: 700;
+      padding: 15px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+    }
+  }
+}

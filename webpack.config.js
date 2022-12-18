@@ -7,15 +7,20 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
-  watch: true,
+  target: "web",
   output: {
     filename: "bundle.[contenthash].js",
     clean: true,
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/images/[name][ext]",
   },
+
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: "html-loader",
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -48,6 +53,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
+      filename: "index.html",
     }),
     new webpack.SourceMapDevToolPlugin({
       filename: "sourcemaps/[file].map",
@@ -58,4 +64,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
   ],
+  devServer: {
+    watchFiles: path.join(__dirname, "src"),
+    port: 9000,
+  },
 };

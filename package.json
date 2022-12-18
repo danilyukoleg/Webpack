@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack serve",
-    "dev":   "webpack --mode development",
-    "prod":  "webpack --mode production"
+    "start": "webpack serve --open --mode development",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
   },
   "author": "Buble-Front",
   "license": "ISC",
@@ -19,9 +19,11 @@
     "bootstrap": "^5.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.3",
+    "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.7.2",
+    "normalize.css": "^8.0.1",
     "postcss": "^8.4.20",
     "postcss-loader": "^7.0.2",
     "sass": "^1.57.0",
